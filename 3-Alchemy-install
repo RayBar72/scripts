@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+# Installing MySQLdb. Al final en la linea de comando de python importar
+pip3 install SQLAlchemy
+python3
+# echo "import sqlalchemy" | python3
+# echo "sqlalchemy.__version__" | python3

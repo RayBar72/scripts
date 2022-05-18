@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+# Instala la última versión de mySql
+apt -y update
+apt install -y mysql-server

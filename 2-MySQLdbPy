@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+# Installing MySQLdb. Al final en la linea de comando de python importar
+apt install -y python3-dev
+apt install -y libmysqlclient-dev
+apt install -y zlib1g-dev
+pip3 install mysqlclient
+python3
+# echo "import MySQLdb" | python3
+# echo "MySQLdb.version_info" | python3

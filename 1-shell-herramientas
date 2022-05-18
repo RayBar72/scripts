@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+# Instalación net-tools, curl y shell check
+apt -y update
+apt install -y git
+apt install -y shellcheck
+apt install -y net-tools
+apt install -y curl
+apt install -y python3-pip

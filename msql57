@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+# Script to install msql 5.7
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.12-1_all.deb
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 467B942D3A79BD29
+dpkg -i mysql-apt-config_0.8.12-1_all.deb
+# Hacer: apt update
+# Revisar si está la versión: apt-cache policy mysql-server
+# Instalar la versión: apt install -f mysql-client=5.7* mysql-community-server=5.7* mysql-server=5.7*
+# mysql_secure_installation

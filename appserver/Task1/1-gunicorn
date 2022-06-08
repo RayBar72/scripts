@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Scritp that installs gunicorn
+apt install -y gunicorn

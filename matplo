@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script that installs the matplotlib library
+
+pip3 install matplotlib

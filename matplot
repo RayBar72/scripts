@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Script that gets ready to run matplotlib
+apt update
+apt install -y ssh
+pip3 install --user matplotlib==3.3.4
+pip3 install --user Pillow
+apt install python3-tk

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Instalación net-tools, curl y shell check
 apt -y update
+apt install -y python3
 # apt install -y git
 apt install -y shellcheck
 apt install -y net-tools

@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# Cloning Airbnb3
-git clone https://github.com/alexaorrico/AirBnB_clone_v3.git

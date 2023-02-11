@@ -15,6 +15,7 @@ Debe tener:
 titulo = ''
 objetivos = []
 tareas = []
+description = []
 archivos = []
 
 archi = re.compile(r'File:*')
@@ -39,11 +40,46 @@ for i, line in enumerate(lines):
         objetivos.append(line)
     if tarea.match(line):
         tareas.append(line)
+        description.append(lines[i + 2])
     if archi.match(line):
         archivos.append(line.split()[1])
 
+titulo = titulo.replace('\n', '')
+for i, o in enumerate(objetivos):
+    objetivos[i] = o.replace('\n', '')
+for i, t in enumerate(tareas):
+    tareas[i] = t.replace('\n', '')
+for i, d in enumerate(description):
+    description[i] = d.replace(':\n', '')
+
 # print(lines)
-print(titulo)
-print(objetivos)
-print(tareas)
-print(archivos)
+# print(titulo)
+# print(objetivos)
+# print(tareas)
+# print(description)
+# print(archivos)
+
+unica = []
+
+unica.append('#' + titulo + '#\n\n')
+
+unica.append('##' + 'Learning Objectives' + '##\n\n')
+
+for o in objetivos:
+    unica.append('- '+ o + '\n')
+
+unica.append('\n##' + 'Content Table' + '##\n\n')
+unica.append('| Task | Description | File |\n')
+unica.append('| ----------- | ----------- | ----------- |\n')
+
+for x, y, z in zip(tareas, description, archivos):
+    unica.append('| ' + x +' | ' + y + ' | ' + z + ' |\n')
+
+unica.append('\n##' + 'Authors:' + '##\n\n')
+unica.append('**Solution by:** Raymundo Barrera Flores. [rbarreraf72@gmail.com](rbarreraf72@gmail.com)\n\n')
+unica.append('\n**Project Required by**: HolbertonSchool\n')
+# print(unica)
+
+with open('README.md', 'w') as f:
+    for u in unica:
+        f.write(u)

@@ -19,7 +19,7 @@ description = []
 archivos = []
 
 archi = re.compile(r'File:*')
-tarea = re.compile(r'\d*\.')
+tarea = re.compile(r'\d*\.\s\w*')
 iniob = re.compile(r'General\n*')
 finob = re.compile(r'Requirements')
 
@@ -40,7 +40,7 @@ for i, line in enumerate(lines):
         objetivos.append(line)
     if tarea.match(line):
         tareas.append(line)
-        description.append(lines[i + 2])
+        description.append(lines[i + 3])
     if archi.match(line):
         archivos.append(line.split()[1])
 
@@ -61,22 +61,25 @@ for i, d in enumerate(description):
 
 unica = []
 
-unica.append('#' + titulo + '#\n\n')
+unica.append('# ' + titulo + ' #\n\n')
 
-unica.append('##' + 'Learning Objectives' + '##\n\n')
+unica.append('<img src="https://github.com/RayBar72/holbertonschool-machine_learning/blob/master/image.png" width="1000" height="450">\n\n')
+
+unica.append('## ' + 'Learning Objectives' + ' ##\n\n')
 
 for o in objetivos:
     unica.append('- '+ o + '\n')
 
-unica.append('\n##' + 'Content Table' + '##\n\n')
+unica.append('\n## ' + 'Content Table' + ' ##\n\n')
 unica.append('| Task | Description | File |\n')
 unica.append('| ----------- | ----------- | ----------- |\n')
 
 for x, y, z in zip(tareas, description, archivos):
     unica.append('| ' + x +' | ' + y + ' | ' + z + ' |\n')
 
-unica.append('\n##' + 'Authors:' + '##\n\n')
-unica.append('**Solution by:** Raymundo Barrera Flores. [rbarreraf72@gmail.com](rbarreraf72@gmail.com)\n\n')
+unica.append('\n## ' + 'Authors:' + ' ##\n\n')
+unica.append('**Solution by:** Raymundo Barrera Flores. [rbarreraf72@gmail.com](rbarreraf72@gmail.com)')
+unica.append('[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/raymundo-barrera-flores-a13022222/\n\n')
 unica.append('\n**Project Required by**: HolbertonSchool\n')
 # print(unica)
 
